@@ -10,6 +10,17 @@
 	"use strict";
 
 	$(function(){
+	var poltavaInfo = document.querySelector('.ba-poltava-info');
+	poltavaInfo = poltavaInfo.innerHTML;
+
+	var mapDiv = document.querySelector('.ba-map');
+	var home = {lat: 49.5925522, lng: 34.5471276};
+	var map = new google.maps.Map(mapDiv, {
+		zoom: 17,
+		center: home,
+		disableDefaultUI: false
+	});
+
 		$('.ba-first-slider').slick(
 		{
 			infinite: true,
@@ -58,15 +69,7 @@
 			}
 			]
 		});
-		var poltavaInfo = document.querySelector('.ba-poltava-info');
-		poltavaInfo = poltavaInfo.innerHTML;
-		var home = {lat: 49.5925522, lng: 34.5471276};
-		var mapDiv = document.querySelector('.ba-map');
-		var map = new google.maps.Map(mapDiv, {
-			zoom: 17,
-			center: home,
-			disableDefaultUI: true
-		});
+
 
 	});
 })(jQuery);

@@ -48,6 +48,17 @@ d.slice(e-c+1,e+c+2).addClass("slick-active").attr("aria-hidden","false")),0===a
 	"use strict";
 
 	$(function(){
+	var poltavaInfo = document.querySelector('.ba-poltava-info');
+	poltavaInfo = poltavaInfo.innerHTML;
+
+	var mapDiv = document.querySelector('.ba-map');
+	var home = {lat: 49.5925522, lng: 34.5471276};
+	var map = new google.maps.Map(mapDiv, {
+		zoom: 17,
+		center: home,
+		disableDefaultUI: false
+	});
+
 		$('.ba-first-slider').slick(
 		{
 			infinite: true,
@@ -94,11 +105,8 @@ d.slice(e-c+1,e+c+2).addClass("slick-active").attr("aria-hidden","false")),0===a
 					slidesToScroll: 1
 				}
 			}
-    // You can unslick at a given breakpoint now by adding:
-    // settings: "unslick"
-    // instead of a settings object
-    ]
-});
+			]
+		});
 
 
 	});
