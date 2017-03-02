@@ -56,12 +56,17 @@
 					slidesToScroll: 1
 				}
 			}
-    // You can unslick at a given breakpoint now by adding:
-    // settings: "unslick"
-    // instead of a settings object
-    ]
-});
-
+			]
+		});
+		var poltavaInfo = document.querySelector('.ba-poltava-info');
+		poltavaInfo = poltavaInfo.innerHTML;
+		var home = {lat: 49.5925522, lng: 34.5471276};
+		var mapDiv = document.querySelector('.ba-map');
+		var map = new google.maps.Map(mapDiv, {
+			zoom: 17,
+			center: home,
+			disableDefaultUI: true
+		});
 
 	});
 })(jQuery);
